@@ -652,7 +652,8 @@
 <script>
 const tracks = [
   {
-    id: 'ssva0tXSR9w',
+    id: 'R5B1jrnqoho',
+    startSeconds: 260,
     titleZh: '傳統市場',
     titleEn: 'Traditional Market',
     subtitle: 'The song of commerce & community',
@@ -663,7 +664,7 @@ const tracks = [
     num: 'Side A — 01'
   },
   {
-    id: 'NNO2r8_0zns',
+    id: 'ssva0tXSR9w',
     titleZh: '台式早餐店',
     titleEn: 'Taiwanese Breakfast Store',
     subtitle: 'Morning rituals in oil and steam',
@@ -685,7 +686,7 @@ const tracks = [
     num: 'Side B — 01'
   },
   {
-    id: '1r6DABN9Gag',
+    id: 'NNO2r8_0zns',
     titleZh: '廟宇祭典',
     titleEn: 'Temple Ceremony',
     subtitle: 'Smoke and drumbeats, heaven & earth',
@@ -795,7 +796,7 @@ function startPlayback(idx) {
 
   // Play YouTube
   if (playerReady && player) {
-    player.loadVideoById(t.id);
+    player.loadVideoById({ videoId: t.id, startSeconds: t.startSeconds || 0 });
     player.playVideo();
   } else {
     // Queue for when ready
